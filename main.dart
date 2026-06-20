@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:flutter_application_1/features/home_screen.dart';
+import 'package:flutter_application_1/features/todolist_screen.dart';
 
 // Auth screens
 import 'features/auth/login_screen.dart';
@@ -8,13 +10,16 @@ import 'features/auth/signup_step2.dart';
 import 'features/auth/forgot_password.dart';
 import 'features/auth/reset_password.dart';
 
-// Home screen
-import 'home/home_screen.dart';
+
+
+// To-Do List screen
+import 'features/todolist_screen.dart';
+import 'features/schedule_screen.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
-  runApp(StudySmartPlanner());
+  runApp(const StudySmartPlanner());
 }
 
 class StudySmartPlanner extends StatelessWidget {
@@ -33,10 +38,9 @@ class StudySmartPlanner extends StatelessWidget {
         '/forgot': (context) => ForgotPasswordScreen(),
         '/reset': (context) => ResetPasswordScreen(),
         '/home': (context) => HomeScreen(),
+        '/todo': (context) => TodoListScreen(), // 
+        '/organizer' : (context) => ScheduleScreen(),
       },
     );
   }
 }
-
-
-
