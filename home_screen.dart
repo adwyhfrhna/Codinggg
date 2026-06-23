@@ -133,7 +133,9 @@ class _HomeScreenState extends State<HomeScreen> {
                         _CategoryBox(
                           title: "Performance tracker",
                           imagePath: "assets/images/performancetracker.png",
-                          onTap: () {},
+                          onTap: () {
+                            Navigator.pushNamed(context, '/tracker');
+                          },
                         ),
                       ],
                     ),
